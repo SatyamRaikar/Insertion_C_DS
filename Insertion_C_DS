@@ -1,0 +1,36 @@
+//Insertion of element 
+#include<stdio.h>
+void display(int,int[]);
+void insertion(int,int,int,int []);
+void main()
+{
+      int n,a[20],i,e,p;
+      printf("Enter the Limit:");
+      scanf("%d",&n);
+      printf("Enter the Elements:");
+      for(i=0;i<n;i++)
+      scanf("%d",&a[i]);
+      printf("\nELEMENTS BEFORE INSERTION:\n");
+      display(n,a);
+      printf("\nEnter the Element to be inserted:");
+      scanf("%d",&e);
+      printf("\nEnter the position to be inserted:");
+      scanf("%d",&p);
+      insertion(n,e,p,a);
+      n++;
+      printf("\nELEMENTS AFTER INSERTION:");
+       display(n,a);
+  }
+void display(int n,int a[20])
+  {
+      int i;
+      for(i=0;i<n;i++)
+        printf("a[%d]=%d ",i,a[i]);
+  }
+ void insertion(int n,int e,int p, int a[20])
+   {
+        int i;
+      for(i=n-1;i>=p;i--)
+      a[i+1]=a[i];
+      a[p]=e;
+   }
